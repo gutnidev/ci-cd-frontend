@@ -33,9 +33,6 @@ jobs:
       - name: Run unit test
         run: node ./src/scripts/test/unit.js
 
-      - name: Run not existing test file
-        run: node ./src/scripts/test/nope.js
-
       - name: Check if e2e test file exists
         run: |
           if [ ! -f ./src/scripts/test/e2e.js ]; then
