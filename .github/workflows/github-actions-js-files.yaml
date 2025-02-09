@@ -1,7 +1,7 @@
-name: GitHub Actions JS Files
+name: Run Tests
 run-name: ${{ github.triggering_actor }} pushed to main 🚀
 on:
-  push:
+  pull_request:
     branches:
       - main
 env:
@@ -9,7 +9,7 @@ env:
 jobs:
   Run_Tests:
     runs-on: ubuntu-latest
-    name: Init Node JS Version
+    name: Run fake tests
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v4
