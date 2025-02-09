@@ -23,13 +23,6 @@ jobs:
       - name: Checkout Current Repository
         uses: actions/checkout@v4
 
-      - name: Check if unit test file exists
-        run: |
-          if [ ! -f ./src/scripts/test/unit.js ]; then
-            echo "❌ Error: unit.js not found!"
-            exit 1
-          fi
-
       - name: Run unit test
         run: node ./src/scripts/test/unit.js
 
