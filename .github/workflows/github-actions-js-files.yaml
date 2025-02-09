@@ -1,7 +1,7 @@
-name: GitHub Actions JS Files
-run-name: ${{ github.triggering_actor }} pushed to main 🚀
+name: Run Tests
+run-name: Run My JS Tests
 on:
-  push:
+  pull_request:
     branches:
       - main
 env:
@@ -9,7 +9,7 @@ env:
 jobs:
   Run_Tests:
     runs-on: ubuntu-latest
-    name: Init Node JS Version
+    name: Run fake tests
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,16 +32,6 @@ jobs:
 
       - name: Run unit test
         run: node ./src/scripts/test/unit.js
-
-      - name: Check if not existing test file exists
-        run: |
-          if [ ! -f ./src/scripts/test/nope.js ]; then
-            echo "❌ Error: nope.js not found!"
-            exit 1
-          fi
-
-      - name: Run not existing test file
-        run: node ./src/scripts/test/nope.js
 
       - name: Check if e2e test file exists
         run: |
