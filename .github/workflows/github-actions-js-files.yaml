@@ -1,5 +1,5 @@
 name: Run Tests
-run-name: ${{ github.triggering_actor }} pushed to main 🚀
+run-name: Run My JS Tests
 on:
   pull_request:
     branches:
