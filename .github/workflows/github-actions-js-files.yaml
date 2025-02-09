@@ -17,7 +17,7 @@ jobs:
         file: [ unit.js, e2e.js]
     steps:
       - name: Make script executable
-        run: chmod +x workflow_scripts/check-file.sh
+        run: chmod +x ./workflow_scripts/check-file.sh
 
       - name: Setup Node
         uses: actions/setup-node@v4
