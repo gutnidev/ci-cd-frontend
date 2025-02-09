@@ -33,6 +33,16 @@ jobs:
       - name: Run unit test
         run: node ./src/scripts/test/unit.js
 
+      - name: Check if not existing test file exists
+        run: |
+          if [ ! -f ./src/scripts/test/nope.js ]; then
+            echo "❌ Error: nope.js not found!"
+            exit 1
+          fi
+
+      - name: Run not existing test file
+        run: node ./src/scripts/test/nope.js
+
       - name: Check if e2e test file exists
         run: |
           if [ ! -f ./src/scripts/test/e2e.js ]; then
