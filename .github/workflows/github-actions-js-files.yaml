@@ -27,7 +27,7 @@ jobs:
       - name: Check Test Files Are Exists
         run: |
           FILE_PATH="${{ env.TEST_FOLDER_PATH }}${{ matrix.file }}"
-          ./scripts/check-file.sh "$FILE_PATH"
+          ./workflow_scripts/check-file.sh "$FILE_PATH"
 
       - run: echo "Success"
   Run_Tests:
