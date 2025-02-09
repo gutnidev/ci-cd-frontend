@@ -1,0 +1,50 @@
+name: GitHub Actions JS Files
+run-name: ${{ github.triggering_actor }} pushed to main 🚀
+on:
+  push:
+    branches:
+      - main
+env:
+  NODE_VERSION: 22.13.1
+jobs:
+  Run_Tests:
+    runs-on: ubuntu-latest
+    name: Init Node JS Version
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - run: |
+          echo "Installed node is" 
+          node -v
+
+      - name: Checkout Current Repository
+        uses: actions/checkout@v4
+
+      - name: Check if unit test file exists
+        run: |
+          if [ ! -f ./src/scripts/test/unit.js ]; then
+            echo "❌ Error: unit.js not found!"
+            exit 1
+          fi
+
+      - name: Run unit test
+        run: node ./src/scripts/test/unit.js
+
+      - name: Check if e2e test file exists
+        run: |
+          if [ ! -f ./src/scripts/test/e2e.js ]; then
+            echo "❌ Error: e2e.js not found!"
+            exit 1
+          fi
+
+      - name: Run e2e test
+        run: node ./src/scripts/test/e2e.js
+
+      - name: Workflow completed
+        run: echo "🎉 All tests passed successfully!"
+
+      - name: Force success exit
+        run: exit 0
