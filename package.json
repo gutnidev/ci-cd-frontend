@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "prettier-lint": "prettier --c .",
     "prettier-fix": "prettier --write .",
     "test:unit": "node ./src/scripts/test/unit.js",
     "test:e2e": "node ./src/scripts/test/e2e.js"
