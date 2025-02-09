@@ -16,9 +16,6 @@ jobs:
       matrix:
         file: [ unit.js, e2e.js]
     steps:
-      - name: Make script executable
-        run: chmod +x ./workflow_scripts/check-file.sh
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -26,6 +23,9 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Make script executable
+        run: chmod +x ./workflow_scripts/check-file.sh
 
       - name: Check Test Files Are Exists
         run: |
