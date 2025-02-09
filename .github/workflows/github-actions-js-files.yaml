@@ -16,7 +16,7 @@ jobs:
       matrix:
         file: [ unit.js, e2e.js]
     steps:
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
