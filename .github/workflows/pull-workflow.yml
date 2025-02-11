@@ -2,7 +2,7 @@ name: Full Workflow
 run-name: Full Workflow
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
