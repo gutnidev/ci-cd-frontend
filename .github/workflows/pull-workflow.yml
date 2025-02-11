@@ -31,10 +31,10 @@ jobs:
 
       - name: Compute package-lock.json hash
         id: compute_lockfile_hash
-        run: echo "lockfile_hash=$(sha256sum package-lock.json | cut -d ' ' -f 1)" >> "$GITHUB_OUTPUT"
+        run: echo "lockfile_hash=$(hashFiles(package-lock.json))" >> "$GITHUB_OUTPUT"
 
       - name: Restore npm cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: npm-cache
         with:
           path: ~/.npm
