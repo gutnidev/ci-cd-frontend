@@ -48,7 +48,7 @@ jobs:
             echo "❌ Cache MISS: Installing dependencies from scratch."
           fi
 
-      - name: Clear npm cache if package-lock.json changed
+      - name: Clear npm cache if package-lock.json changeda
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: rm -rf ~/.npm
 
