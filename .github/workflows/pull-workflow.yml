@@ -70,6 +70,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: workspace
+
+      - name: Check Node.js and npm versions
+        run: |
+          echo "Using Node.js version: $(node -v)"
+          echo "Using npm version: $(npm -v)"
+
       - name: Restore npm cache
         uses: actions/cache@v3
         id: npm-cache
