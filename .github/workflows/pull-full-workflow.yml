@@ -1,5 +1,5 @@
-name: Test Verbose
-run-name: Test Verbose
+name: Cache Manually
+run-name: Cache Manually
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       lockfile_hash: ${{ steps.compute_lockfile_hash.outputs.lockfile_hash }}
-    name: Run App Tests
+    name: Cache Manually
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
