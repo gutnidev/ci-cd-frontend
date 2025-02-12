@@ -1,3 +1,4 @@
+# Сами делаем хєш lock файла, сами кєшируем npm, сами достаём, работает
 name: Cache Manually
 run-name: Cache Manually
 
