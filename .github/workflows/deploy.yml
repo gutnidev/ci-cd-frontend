@@ -1,3 +1,4 @@
+# Билдит сам Vercel, версия ноды задаётся в package.json в engines.node
 name: Deploy
 run-name: Deploy
 
